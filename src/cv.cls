@@ -12,6 +12,8 @@
   top=1.5cm,
 ]{geometry}
 
+\pagenumbering{gobble}
+
 \usepackage{fancyhdr}
 
 \newcommand{\fullname}{Anonymous}
