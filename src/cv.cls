@@ -5,8 +5,6 @@
 \ProcessOptions\relax
 \LoadClass{article}
 
-\newlength{\photoheight}
-
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 \usepackage[
@@ -16,6 +14,8 @@
   headheight=0cm,
 ]{geometry}
 
+\usepackage{multicol}
+
 \pagenumbering{gobble}
 
 \newcommand{\fullname}{Anonymous}
@@ -23,11 +23,20 @@
 
 \newcommand{\photo}{}
 \newcommand{\setphoto}[1]{%
-  \setlength{\photoheight}{9em}
-  \renewcommand{\photo}{\includegraphics[height=\photoheight]{#1}}
+  \renewcommand{\photo}{%
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=\textwidth]{#1}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+  }
 }
 
 \AtBeginDocument{
-  \photo\fullname\\
+  \begin{minipage}{\textwidth}
+    \photo
+    \begin{minipage}{0.8\textwidth}
+      \fullname
+    \end{minipage}
+  \end{minipage}
   \rule{\textwidth}{1pt}
 }
