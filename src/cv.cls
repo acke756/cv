@@ -5,6 +5,12 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
+\usepackage[
+  left=1.5cm,
+  right=1.5cm,
+  includehead,
+  top=1.5cm,
+]{geometry}
 
 \usepackage{fancyhdr}
 
