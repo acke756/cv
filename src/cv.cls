@@ -5,3 +5,13 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
+
+\usepackage{fancyhdr}
+
+\newcommand{\fullname}{Anonymous}
+\newcommand{\setname}[1]{\renewcommand{\fullname}{#1}}
+
+\AtBeginDocument{
+  \pagestyle{fancy}
+  \fancyhead[L]{\fullname}
+}
