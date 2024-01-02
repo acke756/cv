@@ -50,11 +50,23 @@
   }
 }
 
+\newcommand{\email}{}
+\newcommand{\emailurl}{}
+\newcommand{\setemail}[1]{%
+  \renewcommand{\emailurl}{#1}
+  \renewcommand{\email}{%
+    \\[1em]
+    \includegraphics[height=1em]{img/mail}
+    \emailurl
+  }
+}
+
 \AtBeginDocument{
   \begin{minipage}{\textwidth}
     \photo
     \begin{minipage}{0.8\textwidth}
       \fullname
+      \@ifpackageloaded{hyperref}{\href{mailto:\emailurl}{\email}}{\email}
       \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
       \phoneno
     \end{minipage}
