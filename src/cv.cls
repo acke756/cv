@@ -61,6 +61,14 @@
   }
 }
 
+\newcommand{\address}{}
+\newcommand{\setaddress}[1]{%
+  \renewcommand{\address}{%
+    \\[1em]
+    \includegraphics[height=1em]{img/location} #1
+  }
+}
+
 \AtBeginDocument{
   \begin{minipage}{\textwidth}
     \photo
@@ -69,6 +77,7 @@
       \@ifpackageloaded{hyperref}{\href{mailto:\emailurl}{\email}}{\email}
       \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
       \phoneno
+      \address
     \end{minipage}
   \end{minipage}
   \rule{\textwidth}{1pt}
