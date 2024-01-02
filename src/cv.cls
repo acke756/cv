@@ -31,11 +31,23 @@
   }
 }
 
+\newcommand{\githubname}{}
+\newcommand{\github}{}
+\newcommand{\setgithub}[1]{%
+  \renewcommand{\githubname}{#1}
+  \renewcommand{\github}{%
+    \\[1em]
+    \includegraphics[height=1em]{img/github-mark}
+    \githubname
+  }
+}
+
 \AtBeginDocument{
   \begin{minipage}{\textwidth}
     \photo
     \begin{minipage}{0.8\textwidth}
       \fullname
+      \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
     \end{minipage}
   \end{minipage}
   \rule{\textwidth}{1pt}

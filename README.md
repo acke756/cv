@@ -14,3 +14,4 @@ create a new directory named `out` containing the resulting PDF file.
 The following commands are provided by `cv.cls`:
 - `\setname{<name>}`: Sets the name displayed in the CV header.
 - `\setphoto{<filename>}`: Sets the photo displayed in the CV header.
+- `\setgithub{<name>}`: Sets the GitHub username displayed in the CV header.
