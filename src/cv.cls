@@ -42,12 +42,21 @@
   }
 }
 
+\newcommand{\phoneno}{}
+\newcommand{\setphoneno}[1]{%
+  \renewcommand{\phoneno}{
+    \\[1em]
+    \includegraphics[height=1em]{img/phone} #1
+  }
+}
+
 \AtBeginDocument{
   \begin{minipage}{\textwidth}
     \photo
     \begin{minipage}{0.8\textwidth}
       \fullname
       \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
+      \phoneno
     \end{minipage}
   \end{minipage}
   \rule{\textwidth}{1pt}
