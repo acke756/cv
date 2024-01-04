@@ -61,7 +61,6 @@
 \newcommand{\setemail}[1]{%
   \renewcommand{\emailurl}{#1}
   \renewcommand{\email}{%
-    \\[1em]
     \emailicon
     \emailurl
   }
@@ -99,13 +98,18 @@
     below=of photo
   ] (name) {\Large \fullname};
 
+  \node[
+    below=1em of name
+  ] (mail) {%
+    \@ifpackageloaded{hyperref}{\href{mailto:\emailurl}{\email}}{\email}
+  };
+
   \end{tikzpicture}
 }
 
 \AtBeginDocument{
   \begin{minipage}{\textwidth}
     \begin{minipage}{0.8\textwidth}
-      \@ifpackageloaded{hyperref}{\href{mailto:\emailurl}{\email}}{\email}
       \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
       \phoneno
       \address
