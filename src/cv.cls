@@ -8,10 +8,11 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 \RequirePackage[
-  left=1.5cm,
-  right=1.5cm,
-  top=1.5cm,
+  left=0.35\paperwidth,
+  right=0.05\paperwidth,
+  top=0.05\paperwidth,
 ]{geometry}
+\RequirePackage{tikz}
 
 \pagestyle{empty}
 
@@ -64,6 +65,15 @@
     \\[1em]
     \includegraphics[height=1em]{img/location} #1
   }
+}
+
+\newcommand{\makesidebar}{%
+  \begin{tikzpicture}[
+    remember picture,
+    overlay,
+  ]
+  \path[fill=pink] (current page.north west) rectangle +(0.3\paperwidth, -\paperheight);
+  \end{tikzpicture}
 }
 
 \AtBeginDocument{
