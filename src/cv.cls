@@ -83,13 +83,16 @@
     below=0.05\paperwidth of sidebar.north,
   ] (photo) {\photo};
 
+  \node[
+    below=of photo
+  ] (name) {\Large \fullname};
+
   \end{tikzpicture}
 }
 
 \AtBeginDocument{
   \begin{minipage}{\textwidth}
     \begin{minipage}{0.8\textwidth}
-      \fullname
       \@ifpackageloaded{hyperref}{\href{mailto:\emailurl}{\email}}{\email}
       \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
       \phoneno
