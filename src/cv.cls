@@ -30,16 +30,15 @@
   }
 }
 
-\newcommand{\CvGithubUser}{}
 \newcommand{\CvGithub}{}
 \newcommand{\CvGithubIcon}{%
   \includegraphics[height=1em]{img/github-mark}
 }
 \newcommand{\cvgithub}[1]{%
-  \renewcommand{\CvGithubUser}{#1}
   \renewcommand{\CvGithub}{%
-    \CvGithubIcon
-    \CvGithubUser
+    \MaybeHref{https://github.com/#1}{%
+      \CvGithubIcon #1
+    }
   }
 }
 
@@ -106,7 +105,7 @@
   \node[
     anchor=north west
   ] (github) at (mail.south west) {%
-    \MaybeHref{https://github.com/\CvGithubUser}{\CvGithub}
+    \CvGithub
   };
 
   \node[
