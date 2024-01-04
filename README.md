@@ -19,3 +19,8 @@ The following commands are provided by `cv.cls`:
 - `\cvphoneno{<no>}`: Sets the phone number displayed in the sidebar.
 - `\cvemail{<email>}`: Sets the e-mail address displayed in the sidebar.
 - `\cvaddress{<address>}`: Sets the address displayed in the sidebar.
+
+The following lengths are provided by `cv.cls`:
+- `\sidebarwidth`: The width of the sidebar.
+- `\sidebartextwidth`: The width of the box containing all the content of the
+  sidebar.

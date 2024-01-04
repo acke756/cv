@@ -5,8 +5,14 @@
 \ProcessOptions\relax
 \LoadClass{article}
 
+\newlength{\sidebarwidth}
+\newlength{\sidebartextwidth}
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
+\setlength{\sidebarwidth}{0.3\paperwidth}
+\setlength{\sidebartextwidth}{0.9\sidebarwidth}
+
 \RequirePackage[
   left=0.35\paperwidth,
   right=0.05\paperwidth,
@@ -88,16 +94,18 @@
   ] (sidebar) at (current page.north west) {};
 
   \node[
+    minimum width=\sidebartextwidth,
     below=0.05\paperwidth of sidebar.north,
   ] (photo) {\CvPhoto};
 
   \node[
-    below=of photo
+    below=of photo,
+    minimum width=\sidebartextwidth,
   ] (name) {\Large \CvName};
 
   \node[
-    below=1em of name
-  ] (mail) {%
+    anchor=north west,
+  ] (mail) at (name.south west) {%
     \CvEmail
   };
 
