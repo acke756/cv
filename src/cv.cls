@@ -36,7 +36,6 @@
 \newcommand{\setgithub}[1]{%
   \renewcommand{\githubname}{#1}
   \renewcommand{\github}{%
-    \\[1em]
     \githubicon
     \githubname
   }
@@ -48,7 +47,6 @@
 }
 \newcommand{\setphoneno}[1]{%
   \renewcommand{\phoneno}{
-    \\[1em]
     \phoneicon #1
   }
 }
@@ -104,13 +102,18 @@
     \@ifpackageloaded{hyperref}{\href{mailto:\emailurl}{\email}}{\email}
   };
 
+  \node[
+    anchor=north west
+  ] (github) at (mail.south west) {%
+    \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
+  };
+
   \end{tikzpicture}
 }
 
 \AtBeginDocument{
   \begin{minipage}{\textwidth}
     \begin{minipage}{0.8\textwidth}
-      \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
       \phoneno
       \address
     \end{minipage}
