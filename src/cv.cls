@@ -72,7 +72,14 @@
     remember picture,
     overlay,
   ]
-  \path[fill=pink] (current page.north west) rectangle +(0.3\paperwidth, -\paperheight);
+
+  \node[
+    anchor=north west,
+    minimum width=0.3\paperwidth,
+    minimum height=\paperheight,
+    fill=pink,
+  ] (sidebar) at (current page.north west) {};
+
   \end{tikzpicture}
 }
 
