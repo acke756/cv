@@ -14,8 +14,6 @@
   headheight=0cm,
 ]{geometry}
 
-\usepackage{multicol}
-
 \pagenumbering{gobble}
 
 \newcommand{\fullname}{Anonymous}
