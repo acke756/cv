@@ -70,7 +70,6 @@
 }
 \newcommand{\setaddress}[1]{%
   \renewcommand{\address}{%
-    \\[1em]
     \addressicon #1
   }
 }
@@ -108,13 +107,16 @@
     \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
   };
 
+  \node[
+    anchor=north west
+  ] (phoneno) at (github.south west) {\phoneno};
+
   \end{tikzpicture}
 }
 
 \AtBeginDocument{
   \begin{minipage}{\textwidth}
     \begin{minipage}{0.8\textwidth}
-      \phoneno
       \address
     \end{minipage}
   \end{minipage}

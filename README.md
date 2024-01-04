@@ -16,6 +16,6 @@ The following commands are provided by `cv.cls`:
 - `\setname{<name>}`: Sets the name displayed in the sidebar.
 - `\setphoto{<filename>}`: Sets the photo displayed in the sidebar.
 - `\setgithub{<name>}`: Sets the GitHub username displayed in the sidebar.
-- `\setphoneno{<no>}`: Sets the phone number displayed in the CV header.
+- `\setphoneno{<no>}`: Sets the phone number displayed in the sidebar.
 - `\setemail{<email>}`: Sets the e-mail address displayed in the sidebar.
 - `\setaddress{<address>}`: Sets the address displayed in the CV header.
