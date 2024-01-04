@@ -11,7 +11,6 @@
   left=1.5cm,
   right=1.5cm,
   top=1.5cm,
-  headheight=0cm,
 ]{geometry}
 
 \pagenumbering{gobble}
