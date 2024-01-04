@@ -30,39 +30,51 @@
 
 \newcommand{\githubname}{}
 \newcommand{\github}{}
+\newcommand{\githubicon}{%
+  \includegraphics[height=1em]{img/github-mark}
+}
 \newcommand{\setgithub}[1]{%
   \renewcommand{\githubname}{#1}
   \renewcommand{\github}{%
     \\[1em]
-    \includegraphics[height=1em]{img/github-mark}
+    \githubicon
     \githubname
   }
 }
 
 \newcommand{\phoneno}{}
+\newcommand{\phoneicon}{%
+  \includegraphics[height=1em]{img/phone}
+}
 \newcommand{\setphoneno}[1]{%
   \renewcommand{\phoneno}{
     \\[1em]
-    \includegraphics[height=1em]{img/phone} #1
+    \phoneicon #1
   }
 }
 
 \newcommand{\email}{}
 \newcommand{\emailurl}{}
+\newcommand{\emailicon}{%
+  \includegraphics[height=1em]{img/mail}
+}
 \newcommand{\setemail}[1]{%
   \renewcommand{\emailurl}{#1}
   \renewcommand{\email}{%
     \\[1em]
-    \includegraphics[height=1em]{img/mail}
+    \emailicon
     \emailurl
   }
 }
 
 \newcommand{\address}{}
+\newcommand{\addressicon}{%
+  \includegraphics[height=1em]{img/location}
+}
 \newcommand{\setaddress}[1]{%
   \renewcommand{\address}{%
     \\[1em]
-    \includegraphics[height=1em]{img/location} #1
+    \addressicon #1
   }
 }
 
