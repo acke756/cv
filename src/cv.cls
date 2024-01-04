@@ -7,7 +7,7 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
-\usepackage[
+\RequirePackage[
   left=1.5cm,
   right=1.5cm,
   top=1.5cm,
