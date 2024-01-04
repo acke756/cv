@@ -53,15 +53,14 @@
 }
 
 \newcommand{\CvEmail}{}
-\newcommand{\CvEmailUrl}{}
 \newcommand{\CvEmailIcon}{%
   \includegraphics[height=1em]{img/mail}
 }
 \newcommand{\cvemail}[1]{%
-  \renewcommand{\CvEmailUrl}{#1}
   \renewcommand{\CvEmail}{%
-    \CvEmailIcon
-    \CvEmailUrl
+    \MaybeHref{mailto:#1}{%
+      \CvEmailIcon #1
+    }
   }
 }
 
@@ -99,7 +98,7 @@
   \node[
     below=1em of name
   ] (mail) {%
-    \MaybeHref{mailto:\CvEmailUrl}{\CvEmail}
+    \CvEmail
   };
 
   \node[
