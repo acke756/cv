@@ -111,14 +111,9 @@
     anchor=north west
   ] (phoneno) at (github.south west) {\phoneno};
 
-  \end{tikzpicture}
-}
+  \node[
+    anchor=north west
+  ] (address) at (phoneno.south west) {\address};
 
-\AtBeginDocument{
-  \begin{minipage}{\textwidth}
-    \begin{minipage}{0.8\textwidth}
-      \address
-    \end{minipage}
-  \end{minipage}
-  \rule{\textwidth}{1pt}
+  \end{tikzpicture}
 }
