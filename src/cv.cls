@@ -18,6 +18,8 @@
 
 \pagestyle{empty}
 
+\newcommand{\MaybeHref}[2]{\@ifpackageloaded{hyperref}{\href{#1}{#2}}{#2}}
+
 \newcommand{\CvName}{Anonymous}
 \newcommand{\cvname}[1]{\renewcommand{\CvName}{#1}}
 
@@ -98,13 +100,13 @@
   \node[
     below=1em of name
   ] (mail) {%
-    \@ifpackageloaded{hyperref}{\href{mailto:\CvEmailUrl}{\CvEmail}}{\CvEmail}
+    \MaybeHref{mailto:\CvEmailUrl}{\CvEmail}
   };
 
   \node[
     anchor=north west
   ] (github) at (mail.south west) {%
-    \@ifpackageloaded{hyperref}{\href{https://github.com/\CvGithubUser}{\CvGithub}}{\CvGithub}
+    \MaybeHref{https://github.com/\CvGithubUser}{\CvGithub}
   };
 
   \node[
