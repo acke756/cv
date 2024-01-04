@@ -12,7 +12,9 @@
   right=0.05\paperwidth,
   top=0.05\paperwidth,
 ]{geometry}
+
 \RequirePackage{tikz}
+\usetikzlibrary{positioning}
 
 \pagestyle{empty}
 
@@ -22,10 +24,7 @@
 \newcommand{\photo}{}
 \newcommand{\setphoto}[1]{%
   \renewcommand{\photo}{%
-    \begin{minipage}{0.15\textwidth}
-      \includegraphics[width=\textwidth]{#1}
-    \end{minipage}
-    \hspace{0.05\textwidth}
+    \includegraphics[width=0.15\paperwidth]{#1}
   }
 }
 
@@ -80,12 +79,15 @@
     fill=pink,
   ] (sidebar) at (current page.north west) {};
 
+  \node[
+    below=0.05\paperwidth of sidebar.north,
+  ] (photo) {\photo};
+
   \end{tikzpicture}
 }
 
 \AtBeginDocument{
   \begin{minipage}{\textwidth}
-    \photo
     \begin{minipage}{0.8\textwidth}
       \fullname
       \@ifpackageloaded{hyperref}{\href{mailto:\emailurl}{\email}}{\email}
