@@ -18,59 +18,59 @@
 
 \pagestyle{empty}
 
-\newcommand{\fullname}{Anonymous}
-\newcommand{\setname}[1]{\renewcommand{\fullname}{#1}}
+\newcommand{\CvName}{Anonymous}
+\newcommand{\cvname}[1]{\renewcommand{\CvName}{#1}}
 
-\newcommand{\photo}{}
-\newcommand{\setphoto}[1]{%
-  \renewcommand{\photo}{%
+\newcommand{\CvPhoto}{}
+\newcommand{\cvphoto}[1]{%
+  \renewcommand{\CvPhoto}{%
     \includegraphics[width=0.15\paperwidth]{#1}
   }
 }
 
-\newcommand{\githubname}{}
-\newcommand{\github}{}
-\newcommand{\githubicon}{%
+\newcommand{\CvGithubUser}{}
+\newcommand{\CvGithub}{}
+\newcommand{\CvGithubIcon}{%
   \includegraphics[height=1em]{img/github-mark}
 }
-\newcommand{\setgithub}[1]{%
-  \renewcommand{\githubname}{#1}
-  \renewcommand{\github}{%
-    \githubicon
-    \githubname
+\newcommand{\cvgithub}[1]{%
+  \renewcommand{\CvGithubUser}{#1}
+  \renewcommand{\CvGithub}{%
+    \CvGithubIcon
+    \CvGithubUser
   }
 }
 
-\newcommand{\phoneno}{}
-\newcommand{\phoneicon}{%
+\newcommand{\CvPhoneNo}{}
+\newcommand{\CvPhoneIcon}{%
   \includegraphics[height=1em]{img/phone}
 }
-\newcommand{\setphoneno}[1]{%
-  \renewcommand{\phoneno}{
-    \phoneicon #1
+\newcommand{\cvphoneno}[1]{%
+  \renewcommand{\CvPhoneNo}{
+    \CvPhoneIcon #1
   }
 }
 
-\newcommand{\email}{}
-\newcommand{\emailurl}{}
-\newcommand{\emailicon}{%
+\newcommand{\CvEmail}{}
+\newcommand{\CvEmailUrl}{}
+\newcommand{\CvEmailIcon}{%
   \includegraphics[height=1em]{img/mail}
 }
-\newcommand{\setemail}[1]{%
-  \renewcommand{\emailurl}{#1}
-  \renewcommand{\email}{%
-    \emailicon
-    \emailurl
+\newcommand{\cvemail}[1]{%
+  \renewcommand{\CvEmailUrl}{#1}
+  \renewcommand{\CvEmail}{%
+    \CvEmailIcon
+    \CvEmailUrl
   }
 }
 
-\newcommand{\address}{}
-\newcommand{\addressicon}{%
+\newcommand{\CvAddress}{}
+\newcommand{\CvAddressIcon}{%
   \includegraphics[height=1em]{img/location}
 }
-\newcommand{\setaddress}[1]{%
-  \renewcommand{\address}{%
-    \addressicon #1
+\newcommand{\cvaddress}[1]{%
+  \renewcommand{\CvAddress}{%
+    \CvAddressIcon #1
   }
 }
 
@@ -89,31 +89,31 @@
 
   \node[
     below=0.05\paperwidth of sidebar.north,
-  ] (photo) {\photo};
+  ] (photo) {\CvPhoto};
 
   \node[
     below=of photo
-  ] (name) {\Large \fullname};
+  ] (name) {\Large \CvName};
 
   \node[
     below=1em of name
   ] (mail) {%
-    \@ifpackageloaded{hyperref}{\href{mailto:\emailurl}{\email}}{\email}
+    \@ifpackageloaded{hyperref}{\href{mailto:\CvEmailUrl}{\CvEmail}}{\CvEmail}
   };
 
   \node[
     anchor=north west
   ] (github) at (mail.south west) {%
-    \@ifpackageloaded{hyperref}{\href{https://github.com/\githubname}{\github}}{\github}
+    \@ifpackageloaded{hyperref}{\href{https://github.com/\CvGithubUser}{\CvGithub}}{\CvGithub}
   };
 
   \node[
     anchor=north west
-  ] (phoneno) at (github.south west) {\phoneno};
+  ] (phoneno) at (github.south west) {\CvPhoneNo};
 
   \node[
     anchor=north west
-  ] (address) at (phoneno.south west) {\address};
+  ] (address) at (phoneno.south west) {\CvAddress};
 
   \end{tikzpicture}
 }
