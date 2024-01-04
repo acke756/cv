@@ -12,7 +12,7 @@ run:
 	$(OPEN) out/$(DOC).pdf
 
 mostlyclean:
-	$(RM) out/$(DOC).log out/$(DOC).aux
+	$(RM) out/$(DOC).log out/$(DOC).aux out/$(DOC).out
 
 clean:
 	$(RM) out/*
