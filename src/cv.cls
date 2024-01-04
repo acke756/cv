@@ -13,7 +13,7 @@
   top=1.5cm,
 ]{geometry}
 
-\pagenumbering{gobble}
+\pagestyle{empty}
 
 \newcommand{\fullname}{Anonymous}
 \newcommand{\setname}[1]{\renewcommand{\fullname}{#1}}
