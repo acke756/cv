@@ -32,59 +32,47 @@
 
 \newcommand{\MaybeHref}[2]{\@ifpackageloaded{hyperref}{\href{#1}{#2}}{#2}}
 
-\newcommand{\CvName}{Anonymous}
-\newcommand{\cvname}[1]{\renewcommand{\CvName}{#1}}
+\newcommand{\CvTitle}[1]{{\Large #1}}
+\newcommand{\cvtitle}[1]{\CvTitle{#1}}
 
-\newcommand{\CvPhoto}{}
-\newcommand{\cvphoto}[1]{%
-  \renewcommand{\CvPhoto}{%
-    \includegraphics[width=0.7\sidebarwidth]{#1}
-  }
+\newcommand{\CvPhoto}[2]{%
+  \includegraphics[#1]{#2}
+}
+\newcommand{\cvphoto}[2][]{%
+  \CvPhoto{#1}{#2}
 }
 
-\newcommand{\CvGithub}{}
 \newcommand{\CvGithubIcon}{%
   \includegraphics[height=1em]{img/github-mark}
 }
-\newcommand{\cvgithub}[1]{%
-  \renewcommand{\CvGithub}{%
-    \MaybeHref{https://github.com/#1}{%
-      \CvGithubIcon #1
-    }
+\newcommand{\CvGithub}[1]{%
+  \MaybeHref{https://github.com/#1}{%
+    \CvGithubIcon #1
   }
 }
+\newcommand{\cvgithub}[1]{\CvGithub{#1}}
 
-\newcommand{\CvPhoneNo}{}
 \newcommand{\CvPhoneIcon}{%
   \includegraphics[height=1em]{img/phone}
 }
-\newcommand{\cvphoneno}[1]{%
-  \renewcommand{\CvPhoneNo}{
-    \CvPhoneIcon #1
-  }
-}
+\newcommand{\CvPhoneNo}[1]{\CvPhoneIcon #1}
+\newcommand{\cvphoneno}[1]{\CvPhoneNo[#1]}
 
-\newcommand{\CvEmail}{}
 \newcommand{\CvEmailIcon}{%
   \includegraphics[height=1em]{img/mail}
 }
-\newcommand{\cvemail}[1]{%
-  \renewcommand{\CvEmail}{%
-    \MaybeHref{mailto:#1}{%
-      \CvEmailIcon #1
-    }
+\newcommand{\CvEmail}[1]{%
+  \MaybeHref{mailto:#1}{%
+    \CvEmailIcon #1
   }
 }
+\newcommand{\cvemail}{\CvEmail}
 
-\newcommand{\CvAddress}{}
 \newcommand{\CvAddressIcon}{%
   \includegraphics[height=1em]{img/location}
 }
-\newcommand{\cvaddress}[1]{%
-  \renewcommand{\CvAddress}{%
-    \CvAddressIcon #1
-  }
-}
+\newcommand{\CvAddress}[1]{\CvAddressIcon #1}
+\newcommand{\cvaddress}[1]{\CvAddress{#1}}
 
 \newcounter{CurrentSidebarElemCounter}
 \newcounter{PreviousSidebarElemCounter}
@@ -92,7 +80,6 @@
 \newcommand*{\PreviousSidebarElem}{SidebarElem\thePreviousSidebarElemCounter}
 
 \newenvironment{sidebar}{%
-
   \newcommand{\appendnode}[2][]{%
     \node[
       anchor=north west, ##1
@@ -100,6 +87,30 @@
 
     \stepcounter{CurrentSidebarElemCounter}
     \stepcounter{PreviousSidebarElemCounter}
+  }
+
+  \renewcommand{\cvtitle}[1]{%
+    \appendnode[minimum width=0.9\sidebarwidth, inner ysep=1em]{\CvTitle{##1}}
+  }
+
+  \renewcommand{\cvphoto}[2][width=0.7\sidebarwidth]{%
+    \appendnode[minimum width=0.9\sidebarwidth]{\CvPhoto{##1}{##2}}
+  }
+
+  \renewcommand{\cvgithub}[1]{%
+    \appendnode{\CvGithub{##1}}
+  }
+
+  \renewcommand{\cvphoneno}[1]{%
+    \appendnode{\CvPhoneNo{##1}}
+  }
+
+  \renewcommand{\cvemail}[1]{%
+    \appendnode{\CvEmail{##1}}
+  }
+
+  \renewcommand{\cvaddress}[1]{%
+    \appendnode{\CvAddress{##1}}
   }
 
   \begin{tikzpicture}[
@@ -118,13 +129,6 @@
     ($(sidebar.north west) + (0.05\sidebarwidth, -0.05\sidebarwidth)$);
 
   \stepcounter{CurrentSidebarElemCounter}
-
-  \appendnode[minimum width=0.9\sidebarwidth]{\CvPhoto}
-  \appendnode[minimum width=0.9\sidebarwidth, inner ysep=1em]{\Large \CvName}
-  \appendnode{\CvEmail}
-  \appendnode{\CvGithub}
-  \appendnode{\CvPhoneNo}
-  \appendnode{\CvAddress}
 }{%
   \end{tikzpicture}
 }

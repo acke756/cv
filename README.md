@@ -17,28 +17,30 @@ Sets the width of the sidebar (`0.3\paperwidth` by
 default).
 
 ## Provided commands
-`\cvname{<name>}`  
-Sets the name displayed in the sidebar.
+`\cvtitle{<text>}`  
+Creates large text. When used in the sidebar environment, the text is centered.
 
-`\cvphoto{<filename>}`  
-Sets the photo displayed in the sidebar.
+`\cvphoto[<options>]{<filename>}`  
+Inserts an image. Options are the same as those used by the `includegraphics`
+command.
 
 `\cvgithub{<name>}`  
-Sets the GitHub username displayed in the sidebar.
+Specifies a GitHub account. Works with the hyperref package.
 
 `\cvphoneno{<no>}`  
-Sets the phone number displayed in the sidebar.
+Specifies a phone number.
 
 `\cvemail{<email>}`  
-Sets the e-mail address displayed in the sidebar.
+Specifies an e-mail address. Works with the hyperref package.
 
 `\cvaddress{<address>}`  
-Sets the address displayed in the sidebar.
+Specifies an address.
 
 ## Provided environments
 `\sidebar`  
 A `tikzpicture` environment that creates a sidebar on the left
-side of the paper.
+side of the paper. All of the commands defined above are available in the
+sidebar.
 
 ## Provided lengths
 `\sidebarwidth`  
