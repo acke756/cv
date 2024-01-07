@@ -12,13 +12,16 @@ compile the example, run `make` in the root of this repository. This should
 create a new directory named `out` containing the resulting PDF file.
 
 The following commands are provided by `cv.cls`:
-- `\makesidebar`: Inserts the sidebar into the current page.
 - `\cvname{<name>}`: Sets the name displayed in the sidebar.
 - `\cvphoto{<filename>}`: Sets the photo displayed in the sidebar.
 - `\cvgithub{<name>}`: Sets the GitHub username displayed in the sidebar.
 - `\cvphoneno{<no>}`: Sets the phone number displayed in the sidebar.
 - `\cvemail{<email>}`: Sets the e-mail address displayed in the sidebar.
 - `\cvaddress{<address>}`: Sets the address displayed in the sidebar.
+
+The following environments are provided by `cv.cls`:
+- `sidebar`: A `tikzpicture` environment that creates a sidebar on the left
+  side of the paper.
 
 The following lengths are provided by `cv.cls`:
 - `\sidebarwidth`: The width of the sidebar.

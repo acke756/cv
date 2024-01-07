@@ -79,7 +79,7 @@
   }
 }
 
-\newcommand{\makesidebar}{%
+\newenvironment{sidebar}{%
   \begin{tikzpicture}[
     remember picture,
     overlay,
@@ -122,5 +122,6 @@
     anchor=north west
   ] (address) at (phoneno.south west) {\CvAddress};
 
+}{%
   \end{tikzpicture}
 }
