@@ -23,7 +23,10 @@
 ]{geometry}
 
 \RequirePackage{tikz}
-\usetikzlibrary{positioning}
+\usetikzlibrary{%
+  calc,
+  positioning,
+}
 
 \pagestyle{empty}
 
@@ -83,7 +86,22 @@
   }
 }
 
+\newcounter{CurrentSidebarElemCounter}
+\newcounter{PreviousSidebarElemCounter}
+\newcommand*{\CurrentSidebarElem}{SidebarElem\theCurrentSidebarElemCounter}
+\newcommand*{\PreviousSidebarElem}{SidebarElem\thePreviousSidebarElemCounter}
+
 \newenvironment{sidebar}{%
+
+  \newcommand{\appendnode}[2][]{%
+    \node[
+      anchor=north west, ##1
+    ] (\CurrentSidebarElem) at (\PreviousSidebarElem.south west) {##2};
+
+    \stepcounter{CurrentSidebarElemCounter}
+    \stepcounter{PreviousSidebarElemCounter}
+  }
+
   \begin{tikzpicture}[
     remember picture,
     overlay,
@@ -96,36 +114,17 @@
     fill=pink,
   ] (sidebar) at (current page.north west) {};
 
-  \node[
-    minimum width=0.9\sidebarwidth,
-    below=0.05\paperwidth of sidebar.north,
-  ] (photo) {\CvPhoto};
+  \coordinate (\CurrentSidebarElem) at
+    ($(sidebar.north west) + (0.05\sidebarwidth, -0.05\sidebarwidth)$);
 
-  \node[
-    below=of photo,
-    minimum width=0.9\sidebarwidth,
-  ] (name) {\Large \CvName};
+  \stepcounter{CurrentSidebarElemCounter}
 
-  \node[
-    anchor=north west,
-  ] (mail) at (name.south west) {%
-    \CvEmail
-  };
-
-  \node[
-    anchor=north west
-  ] (github) at (mail.south west) {%
-    \CvGithub
-  };
-
-  \node[
-    anchor=north west
-  ] (phoneno) at (github.south west) {\CvPhoneNo};
-
-  \node[
-    anchor=north west
-  ] (address) at (phoneno.south west) {\CvAddress};
-
+  \appendnode[minimum width=0.9\sidebarwidth]{\CvPhoto}
+  \appendnode[minimum width=0.9\sidebarwidth, inner ysep=1em]{\Large \CvName}
+  \appendnode{\CvEmail}
+  \appendnode{\CvGithub}
+  \appendnode{\CvPhoneNo}
+  \appendnode{\CvAddress}
 }{%
   \end{tikzpicture}
 }
