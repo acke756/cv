@@ -11,7 +11,6 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 \setlength{\sidebarwidth}{0.3\paperwidth}
-\setlength{\sidebartextwidth}{0.9\sidebarwidth}
 
 \RequirePackage[
   left=0.35\paperwidth,
@@ -32,7 +31,7 @@
 \newcommand{\CvPhoto}{}
 \newcommand{\cvphoto}[1]{%
   \renewcommand{\CvPhoto}{%
-    \includegraphics[width=0.15\paperwidth]{#1}
+    \includegraphics[width=0.7\sidebarwidth]{#1}
   }
 }
 
@@ -88,19 +87,19 @@
 
   \node[
     anchor=north west,
-    minimum width=0.3\paperwidth,
+    minimum width=\sidebarwidth,
     minimum height=\paperheight,
     fill=pink,
   ] (sidebar) at (current page.north west) {};
 
   \node[
-    minimum width=\sidebartextwidth,
+    minimum width=0.9\sidebarwidth,
     below=0.05\paperwidth of sidebar.north,
   ] (photo) {\CvPhoto};
 
   \node[
     below=of photo,
-    minimum width=\sidebartextwidth,
+    minimum width=0.9\sidebarwidth,
   ] (name) {\Large \CvName};
 
   \node[

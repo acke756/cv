@@ -22,5 +22,3 @@ The following commands are provided by `cv.cls`:
 
 The following lengths are provided by `cv.cls`:
 - `\sidebarwidth`: The width of the sidebar.
-- `\sidebartextwidth`: The width of the box containing all the content of the
-  sidebar.
