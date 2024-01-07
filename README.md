@@ -11,21 +11,35 @@ The file `my_cv.tex` provides an example of how your `.tex` file can look. To
 compile the example, run `make` in the root of this repository. This should
 create a new directory named `out` containing the resulting PDF file.
 
-The following class options are available for `cv.cls`:
-- `sidebarwidth=<width>`: Sets the width of the sidebar (`0.3\paperwidth`) by
-  default.
+## Provided class options
+`sidebarwidth=<width>`  
+Sets the width of the sidebar (`0.3\paperwidth` by
+default).
 
-The following commands are provided by `cv.cls`:
-- `\cvname{<name>}`: Sets the name displayed in the sidebar.
-- `\cvphoto{<filename>}`: Sets the photo displayed in the sidebar.
-- `\cvgithub{<name>}`: Sets the GitHub username displayed in the sidebar.
-- `\cvphoneno{<no>}`: Sets the phone number displayed in the sidebar.
-- `\cvemail{<email>}`: Sets the e-mail address displayed in the sidebar.
-- `\cvaddress{<address>}`: Sets the address displayed in the sidebar.
+## Provided commands
+`\cvname{<name>}`  
+Sets the name displayed in the sidebar.
 
-The following environments are provided by `cv.cls`:
-- `sidebar`: A `tikzpicture` environment that creates a sidebar on the left
-  side of the paper.
+`\cvphoto{<filename>}`  
+Sets the photo displayed in the sidebar.
 
-The following lengths are provided by `cv.cls`:
-- `\sidebarwidth`: The width of the sidebar.
+`\cvgithub{<name>}`  
+Sets the GitHub username displayed in the sidebar.
+
+`\cvphoneno{<no>}`  
+Sets the phone number displayed in the sidebar.
+
+`\cvemail{<email>}`  
+Sets the e-mail address displayed in the sidebar.
+
+`\cvaddress{<address>}`  
+Sets the address displayed in the sidebar.
+
+## Provided environments
+`\sidebar`  
+A `tikzpicture` environment that creates a sidebar on the left
+side of the paper.
+
+## Provided lengths
+`\sidebarwidth`  
+The width of the sidebar.
