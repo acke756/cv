@@ -1,16 +1,20 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cv}[2023/12/30 acke756 CV template]
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
-\ProcessOptions\relax
+\RequirePackage{xkeyval}
+
+\newcommand*{\SidebarWidth}{0.3\paperwidth}
+
+\define@key{cv.cls}{sidebarwidth}{\renewcommand*{\SidebarWidth}{#1}}
+\DeclareOptionX*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptionsX\relax
 \LoadClass{article}
 
 \newlength{\sidebarwidth}
-\newlength{\sidebartextwidth}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
-\setlength{\sidebarwidth}{0.3\paperwidth}
+\setlength{\sidebarwidth}{\SidebarWidth}
 
 \RequirePackage[
   left=\dimexpr(0.05\paperwidth + \sidebarwidth)\relax,

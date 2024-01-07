@@ -11,6 +11,10 @@ The file `my_cv.tex` provides an example of how your `.tex` file can look. To
 compile the example, run `make` in the root of this repository. This should
 create a new directory named `out` containing the resulting PDF file.
 
+The following class options are available for `cv.cls`:
+- `sidebarwidth=<width>`: Sets the width of the sidebar (`0.3\paperwidth`) by
+  default.
+
 The following commands are provided by `cv.cls`:
 - `\cvname{<name>}`: Sets the name displayed in the sidebar.
 - `\cvphoto{<filename>}`: Sets the photo displayed in the sidebar.
