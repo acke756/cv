@@ -13,7 +13,7 @@
 \setlength{\sidebarwidth}{0.3\paperwidth}
 
 \RequirePackage[
-  left=0.35\paperwidth,
+  left=\dimexpr(0.05\paperwidth + \sidebarwidth)\relax,
   right=0.05\paperwidth,
   top=0.05\paperwidth,
 ]{geometry}
