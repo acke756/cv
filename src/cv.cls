@@ -80,13 +80,15 @@
 \newcommand*{\PreviousSidebarElem}{SidebarElem\thePreviousSidebarElemCounter}
 
 \newenvironment{sidebar}{%
-  \newcommand{\appendnode}[2][]{%
-    \node[
-      anchor=north west, ##1
-    ] (\CurrentSidebarElem) at (\PreviousSidebarElem.south west) {##2};
+  \newcommand{\Append}[2]{%
+    ##1 (\CurrentSidebarElem) at (\PreviousSidebarElem.south west) {##2};
 
     \stepcounter{CurrentSidebarElemCounter}
     \stepcounter{PreviousSidebarElemCounter}
+  }
+
+  \newcommand{\appendnode}[2][]{%
+    \Append{\node[anchor=north west, ##1]}{##2}
   }
 
   \renewcommand{\cvtitle}[1]{%
