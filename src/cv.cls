@@ -11,10 +11,12 @@
 \LoadClass{article}
 
 \newlength{\sidebarwidth}
+\newlength{\progressbarwidth}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 \setlength{\sidebarwidth}{\SidebarWidth}
+\setlength{\progressbarwidth}{0.5\sidebarwidth}
 
 \RequirePackage[
   left=\dimexpr(0.05\paperwidth + \sidebarwidth)\relax,
@@ -89,6 +91,24 @@
 
   \newcommand{\appendnode}[2][]{%
     \Append{\node[anchor=north west, ##1]}{##2}
+  }
+
+  \newcommand{\cvproficiency}[2]{%
+    \appendnode{##1}
+    {%
+      \coordinate (ProgressBarWest) at
+        ($(\PreviousSidebarElem.west) + (0.9\sidebarwidth, 0) - (\progressbarwidth, 0)$);
+      \node[
+        anchor=west,
+        draw,
+        minimum width=\progressbarwidth,
+      ] (progressbar) at (ProgressBarWest) {};
+      \node[
+        anchor=west,
+        fill,
+        minimum width=##2\progressbarwidth,
+      ] at (ProgressBarWest) {};
+    }
   }
 
   \renewcommand{\cvtitle}[1]{%

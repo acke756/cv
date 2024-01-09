@@ -42,6 +42,15 @@ A `tikzpicture` environment that creates a sidebar on the left
 side of the paper. All of the commands defined above are available in the
 sidebar.
 
+### Sidebar-exclusive commands
+`\cvproficiency{<skill>}{<proficiency>}`  
+Creates a progress bar illustrating the proficiency of the specified skill.
+Proficiency is specified as a number between 0 and 1.
+Example: `\cvproficiency{JavaScript}{0.9}`
+
 ## Provided lengths
 `\sidebarwidth`  
 The width of the sidebar.
+
+`\progressbarwidth`  
+The width of a progress bar (defaults to 0.5\sidebarwidth).
