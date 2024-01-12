@@ -153,8 +153,13 @@
     fill=pink,
   ] (sidebar) at (current page.north west) {};
 
-  \coordinate (\CurrentSidebarElem) at
-    ($(sidebar.north west) + (\sidebarmargin, -\sidebarmargin)$);
+  \node[
+    anchor=north west,
+    minimum width=\sidebartextwidth,
+    minimum height=\sidebartextheight,
+  ] (sidebar content) at ($(sidebar.north west) + (\sidebarmargin, -\sidebarmargin)$) {};
+
+  \coordinate (\CurrentSidebarElem) at (sidebar content.north west);
 
   \stepcounter{CurrentSidebarElemCounter}
 }{%
