@@ -88,8 +88,8 @@
 \newcommand*{\PreviousSidebarElem}{SidebarElem\thePreviousSidebarElemCounter}
 
 \newenvironment{sidebar}{%
-  \newcommand{\Append}[2]{%
-    ##1 (\CurrentSidebarElem) at (\PreviousSidebarElem.south west) {##2};
+  \newcommand{\Append}[3][\PreviousSidebarElem.south west]{%
+    ##2 (\CurrentSidebarElem) at (##1) {##3};
 
     \stepcounter{CurrentSidebarElemCounter}
     \stepcounter{PreviousSidebarElemCounter}
@@ -115,6 +115,25 @@
         minimum width=##2\progressbarwidth,
       ] at (ProgressBarWest) {};
     }
+  }
+
+  \newcommand{\cvsection}[1]{%
+    \Append[$(sidebar content.north)!(\PreviousSidebarElem.south)!(sidebar content.south)$]
+    {\node[anchor=north]}{\Large ##1}
+
+    {%
+      \coordinate (left edge) at
+        ($(sidebar content.north west)!(\PreviousSidebarElem)!(sidebar content.south west)$);
+      \coordinate (right edge) at
+        ($(sidebar content.north east)!(\PreviousSidebarElem)!(sidebar content.south east)$);
+
+      \draw[
+        very thick
+      ] (left edge) -- (\PreviousSidebarElem) -- (right edge);
+    }
+
+    \Append[$(sidebar content.north west)!(\PreviousSidebarElem.south)!(sidebar content.south west)$]
+    {\coordinate}{}
   }
 
   \renewcommand{\cvtitle}[1]{%

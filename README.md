@@ -48,6 +48,9 @@ Creates a progress bar illustrating the proficiency of the specified skill.
 Proficiency is specified as a number between 0 and 1.
 Example: `\cvproficiency{JavaScript}{0.9}`
 
+`\cvsection{<text>}`  
+Creates a section header with the specified text.
+
 ## Provided lengths
 `\sidebarwidth`  
 The width of the sidebar.
