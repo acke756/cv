@@ -21,6 +21,9 @@ Sets the color of the sidebar. The color must be expressed as a hexadecimal
 RGB value, i.e. on the form RRGGBB.
 
 ## Provided commands
+`\cvsection{<text>}`  
+Creates a section header with the specified text.
+
 `\cvphoto[<options>]{<filename>}`  
 Inserts an image. Options are the same as those used by the `includegraphics`
 command.
@@ -48,9 +51,6 @@ sidebar.
 Creates a progress bar illustrating the proficiency of the specified skill.
 Proficiency is specified as a number between 0 and 1.
 Example: `\cvproficiency{JavaScript}{0.9}`
-
-`\cvsection{<text>}`  
-Creates a section header with the specified text.
 
 ## Provided lengths
 `\sidebarwidth`  

@@ -44,6 +44,26 @@
 
 \newcommand{\MaybeHref}[2]{\@ifpackageloaded{hyperref}{\href{#1}{#2}}{#2}}
 
+\newcommand{\cvsection}[1]{%
+  \begin{tikzpicture}
+    \node[
+      minimum width=\textwidth,
+    ] (frame) {};
+
+    \node[
+      anchor=center,
+      inner sep=1em,
+    ] (title) at (frame.center) {\Large #1};
+
+    \coordinate (left edge) at
+      ($(frame.north west)!(title)!(frame.south west)$);
+    \coordinate (right edge) at
+      ($(frame.north east)!(title)!(frame.south east)$);
+
+    \draw[very thick] (left edge) -- (title) -- (right edge);
+  \end{tikzpicture}
+}
+
 \newcommand{\CvPhoto}[2]{%
   \includegraphics[#1]{#2}
 }
@@ -122,7 +142,7 @@
     }
   }
 
-  \newcommand{\cvsection}[1]{%
+  \renewcommand{\cvsection}[1]{%
     \appendcoordinate{%
       $(sidebar content.north)!(\PreviousSidebarElem.south)!(sidebar content.south)$
     }
