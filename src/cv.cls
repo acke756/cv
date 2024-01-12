@@ -103,6 +103,10 @@
     \Append{\node[anchor=north west, ##1]}{##2}
   }
 
+  \newcommand{\appendcoordinate}[1]{%
+    \Append[##1]{\coordinate}{}
+  }
+
   \newcommand{\cvproficiency}[2]{%
     \appendnode{##1}
     {%
@@ -122,8 +126,10 @@
   }
 
   \newcommand{\cvsection}[1]{%
-    \Append[$(sidebar content.north)!(\PreviousSidebarElem.south)!(sidebar content.south)$]
-    {\node[anchor=north]}{\Large ##1}
+    \appendcoordinate{%
+      $(sidebar content.north)!(\PreviousSidebarElem.south)!(sidebar content.south)$
+    }
+    \appendnode[anchor=north]{\Large ##1}
 
     {%
       \coordinate (left edge) at
@@ -135,9 +141,10 @@
         very thick
       ] (left edge) -- (\PreviousSidebarElem) -- (right edge);
     }
-
-    \Append[$(sidebar content.north west)!(\PreviousSidebarElem.south)!(sidebar content.south west)$]
-    {\coordinate}{}
+    
+    \appendcoordinate{%
+      $(sidebar content.north west)!(\PreviousSidebarElem.south)!(sidebar content.south west)$
+    }
   }
 
   \renewcommand{\cvtitle}[1]{%
