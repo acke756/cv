@@ -11,12 +11,16 @@
 \LoadClass{article}
 
 \newlength{\sidebarwidth}
+\newlength{\sidebarmargin}
+\newlength{\sidebartextwidth}
 \newlength{\progressbarwidth}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 \setlength{\sidebarwidth}{\SidebarWidth}
-\setlength{\progressbarwidth}{0.5\sidebarwidth}
+\setlength{\sidebarmargin}{0.05\sidebarwidth}
+\setlength{\sidebartextwidth}{\dimexpr(\sidebarwidth - 2\sidebarmargin)\relax}
+\setlength{\progressbarwidth}{0.5\sidebartextwidth}
 
 \RequirePackage[
   left=\dimexpr(0.05\paperwidth + \sidebarwidth)\relax,
@@ -97,7 +101,7 @@
     \appendnode{##1}
     {%
       \coordinate (ProgressBarWest) at
-        ($(\PreviousSidebarElem.west) + (0.9\sidebarwidth, 0) - (\progressbarwidth, 0)$);
+        ($(\PreviousSidebarElem.west) + (\sidebartextwidth, 0) - (\progressbarwidth, 0)$);
       \node[
         anchor=west,
         draw,
@@ -112,11 +116,11 @@
   }
 
   \renewcommand{\cvtitle}[1]{%
-    \appendnode[minimum width=0.9\sidebarwidth, inner ysep=1em]{\CvTitle{##1}}
+    \appendnode[minimum width=\sidebartextwidth, inner ysep=1em]{\CvTitle{##1}}
   }
 
-  \renewcommand{\cvphoto}[2][width=0.7\sidebarwidth]{%
-    \appendnode[minimum width=0.9\sidebarwidth]{\CvPhoto{##1}{##2}}
+  \renewcommand{\cvphoto}[2][width=0.7\sidebartextwidth]{%
+    \appendnode[minimum width=\sidebartextwidth]{\CvPhoto{##1}{##2}}
   }
 
   \renewcommand{\cvgithub}[1]{%
@@ -148,7 +152,7 @@
   ] (sidebar) at (current page.north west) {};
 
   \coordinate (\CurrentSidebarElem) at
-    ($(sidebar.north west) + (0.05\sidebarwidth, -0.05\sidebarwidth)$);
+    ($(sidebar.north west) + (\sidebarmargin, -\sidebarmargin)$);
 
   \stepcounter{CurrentSidebarElemCounter}
 }{%
