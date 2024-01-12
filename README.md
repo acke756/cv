@@ -21,9 +21,6 @@ Sets the color of the sidebar. The color must be expressed as a hexadecimal
 RGB value, i.e. on the form RRGGBB.
 
 ## Provided commands
-`\cvtitle{<text>}`  
-Creates large text. When used in the sidebar environment, the text is centered.
-
 `\cvphoto[<options>]{<filename>}`  
 Inserts an image. Options are the same as those used by the `includegraphics`
 command.

@@ -44,9 +44,6 @@
 
 \newcommand{\MaybeHref}[2]{\@ifpackageloaded{hyperref}{\href{#1}{#2}}{#2}}
 
-\newcommand{\CvTitle}[1]{{\Large #1}}
-\newcommand{\cvtitle}[1]{\CvTitle{#1}}
-
 \newcommand{\CvPhoto}[2]{%
   \includegraphics[#1]{#2}
 }
@@ -129,7 +126,7 @@
     \appendcoordinate{%
       $(sidebar content.north)!(\PreviousSidebarElem.south)!(sidebar content.south)$
     }
-    \appendnode[anchor=north]{\Large ##1}
+    \appendnode[anchor=north, inner sep=1em]{\Large ##1}
 
     {%
       \coordinate (left edge) at
@@ -145,10 +142,6 @@
     \appendcoordinate{%
       $(sidebar content.north west)!(\PreviousSidebarElem.south)!(sidebar content.south west)$
     }
-  }
-
-  \renewcommand{\cvtitle}[1]{%
-    \appendnode[minimum width=\sidebartextwidth, inner ysep=1em]{\CvTitle{##1}}
   }
 
   \renewcommand{\cvphoto}[2][width=0.7\sidebartextwidth]{%
