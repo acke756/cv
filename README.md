@@ -59,5 +59,9 @@ The length of th emargins of the sidebar.
 The width of the area of the sidebar that contains text. This is equivalent
 to `\sidebarwidth - 2\sidebarmargin`.
 
+`\sidebartextheight`
+The height of the area of the sidebar that contains text. This is equivalent
+to `\paperheight - 2\sidebarmargin`.
+
 `\progressbarwidth`  
 The width of a progress bar (defaults to 0.5\sidebarwidth).

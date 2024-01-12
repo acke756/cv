@@ -13,6 +13,7 @@
 \newlength{\sidebarwidth}
 \newlength{\sidebarmargin}
 \newlength{\sidebartextwidth}
+\newlength{\sidebartextheight}
 \newlength{\progressbarwidth}
 
 \setlength{\parindent}{0pt}
@@ -20,6 +21,7 @@
 \setlength{\sidebarwidth}{\SidebarWidth}
 \setlength{\sidebarmargin}{0.05\sidebarwidth}
 \setlength{\sidebartextwidth}{\dimexpr(\sidebarwidth - 2\sidebarmargin)\relax}
+\setlength{\sidebartextheight}{\dimexpr(\paperheight - 2\sidebarmargin)\relax}
 \setlength{\progressbarwidth}{0.5\sidebartextwidth}
 
 \RequirePackage[
