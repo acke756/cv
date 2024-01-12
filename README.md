@@ -16,6 +16,10 @@ create a new directory named `out` containing the resulting PDF file.
 Sets the width of the sidebar (`0.3\paperwidth` by
 default).
 
+`sidebarcolor=<color>`  
+Sets the color of the sidebar. The color must be expressed as a hexadecimal
+RGB value, i.e. on the form RRGGBB.
+
 ## Provided commands
 `\cvtitle{<text>}`  
 Creates large text. When used in the sidebar environment, the text is centered.
@@ -62,7 +66,7 @@ The length of th emargins of the sidebar.
 The width of the area of the sidebar that contains text. This is equivalent
 to `\sidebarwidth - 2\sidebarmargin`.
 
-`\sidebartextheight`
+`\sidebartextheight`  
 The height of the area of the sidebar that contains text. This is equivalent
 to `\paperheight - 2\sidebarmargin`.
 

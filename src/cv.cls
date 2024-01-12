@@ -4,8 +4,10 @@
 \RequirePackage{xkeyval}
 
 \newcommand*{\SidebarWidth}{0.3\paperwidth}
+\newcommand*{\SidebarColor}{DFDFDF}
 
 \define@key{cv.cls}{sidebarwidth}{\renewcommand*{\SidebarWidth}{#1}}
+\define@key{cv.cls}{sidebarcolor}{\renewcommand*{\SidebarColor}{#1}}
 \DeclareOptionX*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptionsX\relax
 \LoadClass{article}
@@ -35,6 +37,8 @@
   calc,
   positioning,
 }
+
+\definecolor{sidebarcolor}{HTML}{\SidebarColor}
 
 \pagestyle{empty}
 
@@ -169,7 +173,7 @@
     anchor=north west,
     minimum width=\sidebarwidth,
     minimum height=\paperheight,
-    fill=pink,
+    fill=sidebarcolor,
   ] (sidebar) at (current page.north west) {};
 
   \node[
