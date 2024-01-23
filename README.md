@@ -24,6 +24,10 @@ RGB value, i.e. on the form RRGGBB.
 `\cvsection{<text>}`  
 Creates a section header with the specified text.
 
+`\cvexperience{<title>}{<company>}{<from>}{<to>}`  
+Creates a heading describing work experience. It can also be used to describe
+education.
+
 `\cvphoto[<options>]{<filename>}`  
 Inserts an image. Options are the same as those used by the `includegraphics`
 command.

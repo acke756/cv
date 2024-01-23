@@ -64,6 +64,28 @@
   \end{tikzpicture}
 }
 
+\newcommand{\cvexperience}[4]{%
+  \begin{tikzpicture}[
+    every node/.style={inner sep=0pt, inner ysep=.5ex},
+  ]
+    \node[
+      minimum width=\textwidth,
+    ] (frame) {};
+
+    \node[
+      anchor=north west,
+    ] (title) at (frame.north west) {\textbf{#1}};
+
+    \node[
+      anchor=north west,
+    ] (company) at (title.south west) {#2};
+
+    \node[
+      anchor=north east,
+    ] (time) at (frame.north east) {#3 -- #4};
+  \end{tikzpicture}
+}
+
 \newcommand{\CvPhoto}[2]{%
   \includegraphics[#1]{#2}
 }
