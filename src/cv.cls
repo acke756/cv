@@ -21,15 +21,15 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 \setlength{\sidebarwidth}{\SidebarWidth}
-\setlength{\sidebarmargin}{0.05\sidebarwidth}
+\setlength{\sidebarmargin}{0.025\sidebarwidth}
 \setlength{\sidebartextwidth}{\dimexpr(\sidebarwidth - 2\sidebarmargin)\relax}
 \setlength{\sidebartextheight}{\dimexpr(\paperheight - 2\sidebarmargin)\relax}
 \setlength{\progressbarwidth}{0.5\sidebartextwidth}
 
 \RequirePackage[
-  left=\dimexpr(0.05\paperwidth + \sidebarwidth)\relax,
-  right=0.05\paperwidth,
-  top=0.05\paperwidth,
+  left=\dimexpr(0.025\paperwidth + \sidebarwidth)\relax,
+  right=0.025\paperwidth,
+  top=0.025\paperwidth,
 ]{geometry}
 
 \RequirePackage{tikz}
