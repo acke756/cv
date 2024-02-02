@@ -112,6 +112,7 @@
       anchor=west,
       fill,
       minimum width=#2\progressbarwidth,
+      inner xsep=0pt,
     ] at (progressbar.west) {};
   \end{tikzpicture}
 }
@@ -190,6 +191,7 @@
         anchor=west,
         fill,
         minimum width=##2\progressbarwidth,
+        inner xsep=0pt,
       ] at (ProgressBarWest) {};
     }
   }
