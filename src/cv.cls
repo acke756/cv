@@ -97,6 +97,7 @@
     \node[
       anchor=north west,
       inner sep=0pt,
+      minimum height=1.3em,
     ] (proficiency name) at (frame.north west) {#1};
 
     \coordinate (progressbar east) at
