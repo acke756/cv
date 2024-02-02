@@ -48,11 +48,13 @@
   \begin{tikzpicture}
     \node[
       minimum width=\textwidth,
+      inner sep=0pt,
     ] (frame) {};
 
     \node[
       anchor=center,
-      inner sep=1em,
+      minimum height=2em,
+      inner ysep=0pt,
     ] (title) at (frame.center) {\Large #1};
 
     \coordinate (left edge) at
@@ -83,6 +85,34 @@
     \node[
       anchor=north east,
     ] (time) at (frame.north east) {#3 -- #4};
+  \end{tikzpicture}
+}
+
+\newcommand{\cvproficiency}[2]{%
+  \begin{tikzpicture}
+    \node[
+      minimum width=\textwidth,
+    ] (frame) {};
+
+    \node[
+      anchor=north west,
+      inner sep=0pt,
+    ] (proficiency name) at (frame.north west) {#1};
+
+    \coordinate (progressbar east) at
+      ($(frame.north east)!(proficiency name.center)!(frame.south east)$);
+
+    \node[
+      anchor=east,
+      draw,
+      minimum width=\progressbarwidth,
+    ] (progressbar) at (progressbar east) {};
+
+    \node[
+      anchor=west,
+      fill,
+      minimum width=#2\progressbarwidth,
+    ] at (progressbar.west) {};
   \end{tikzpicture}
 }
 
@@ -146,7 +176,7 @@
     \Append[##1]{\coordinate}{}
   }
 
-  \newcommand{\cvproficiency}[2]{%
+  \renewcommand{\cvproficiency}[2]{%
     \appendnode{##1}
     {%
       \coordinate (ProgressBarWest) at

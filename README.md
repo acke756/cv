@@ -28,6 +28,11 @@ Creates a section header with the specified text.
 Creates a heading describing work experience. It can also be used to describe
 education.
 
+`\cvproficiency{<skill>}{<proficiency>}`  
+Creates a progress bar illustrating the proficiency of the specified skill.
+Proficiency is specified as a number between 0 and 1.
+Example: `\cvproficiency{JavaScript}{0.9}`
+
 `\cvphoto[<options>]{<filename>}`  
 Inserts an image. Options are the same as those used by the `includegraphics`
 command.
@@ -49,12 +54,6 @@ Specifies an address.
 A `tikzpicture` environment that creates a sidebar on the left
 side of the paper. All of the commands defined above are available in the
 sidebar.
-
-### Sidebar-exclusive commands
-`\cvproficiency{<skill>}{<proficiency>}`  
-Creates a progress bar illustrating the proficiency of the specified skill.
-Proficiency is specified as a number between 0 and 1.
-Example: `\cvproficiency{JavaScript}{0.9}`
 
 ## Provided lengths
 `\sidebarwidth`  
