@@ -24,7 +24,7 @@ RGB value, i.e. on the form RRGGBB.
 `\cvsection{<text>}`  
 Creates a section header with the specified text.
 
-`\cvexperience{<title>}{<company>}{<from>}{<to>}`  
+`\cvexperience{<title>}{<company>}{<time>}`  
 Creates a heading describing work experience. It can also be used to describe
 education.
 

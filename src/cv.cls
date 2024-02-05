@@ -66,7 +66,7 @@
   \end{tikzpicture}
 }
 
-\newcommand{\cvexperience}[4]{%
+\newcommand{\cvexperience}[3]{%
   \begin{tikzpicture}[
     every node/.style={inner sep=0pt, inner ysep=.5ex},
   ]
@@ -84,7 +84,7 @@
 
     \node[
       anchor=north east,
-    ] (time) at (frame.north east) {#3 -- #4};
+    ] (time) at (frame.north east) {#3};
   \end{tikzpicture}
 }
 
