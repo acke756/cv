@@ -125,43 +125,39 @@
   \CvPhoto{#1}{#2}
 }
 
-\newcommand{\CvGithubIcon}{%
-  \includegraphics[height=1em]{img/github-mark}
+\newcommand{\IconAndText}[2]{%
+  \includegraphics[height=1em]{#1} #2
 }
-\newcommand{\CvGithub}[1]{%
-  \MaybeHref{https://github.com/#1}{%
-    \CvGithubIcon #1
-  }
+\newcommand{\iconandtext}[2]{%
+  \IconAndText{#1}{#2}
 }
-\newcommand{\cvgithub}[1]{\CvGithub{#1}}
 
-\newcommand{\CvPhoneIcon}{%
-  \includegraphics[height=1em]{img/phone}
+\newcommand{\HrefIconAndText}[3]{%
+  \MaybeHref{#1}{\IconAndText{#2}{#3}}
 }
-\newcommand{\CvPhoneNo}[1]{\CvPhoneIcon #1}
-\newcommand{\cvphoneno}[1]{\CvPhoneNo[#1]}
+\newcommand{\hreficonandtext}[3]{%
+  \HrefIconAndText{#1}{#2}{#3}
+}
 
-\newcommand{\CvEmailIcon}{%
-  \includegraphics[height=1em]{img/mail}
+\newcommand{\cvgithub}[1]{%
+  \hreficonandtext{https://github.com/#1}{img/github-mark}{#1}
 }
-\newcommand{\CvEmail}[1]{%
-  \MaybeHref{mailto:#1}{%
-    \CvEmailIcon #1
-  }
-}
-\newcommand{\cvemail}{\CvEmail}
 
-\newcommand{\CvAddressIcon}{%
-  \includegraphics[height=1em]{img/location}
+\newcommand{\cvphoneno}[1]{%
+  \iconandtext{img/phone}{#1}
 }
-\newcommand{\CvAddress}[1]{\CvAddressIcon #1}
-\newcommand{\cvaddress}[1]{\CvAddress{#1}}
 
-\newcommand{\CvBdayIcon}{%
-  \includegraphics[height=1em]{img/cake}
+\newcommand{\cvemail}[1]{%
+  \hreficonandtext{mailto:#1}{img/mail}{#1}
 }
-\newcommand{\CvBday}[1]{\CvBdayIcon #1}
-\newcommand{\cvbday}[1]{\CvBday{#1}}
+
+\newcommand{\cvaddress}[1]{%
+  \iconandtext{img/location}{#1}
+}
+
+\newcommand{\cvbday}[1]{%
+  \iconandtext{img/cake}{#1}
+}
 
 \newcounter{CurrentSidebarElemCounter}
 \newcounter{PreviousSidebarElemCounter}
@@ -225,28 +221,16 @@
     }
   }
 
+  \renewcommand{\iconandtext}[2]{%
+    \appendnode{\IconAndText{##1}{##2}}
+  }
+
+  \renewcommand{\hreficonandtext}[3]{%
+    \appendnode{\HrefIconAndText{##1}{##2}{##3}}
+  }
+
   \renewcommand{\cvphoto}[2][width=0.7\sidebartextwidth]{%
     \appendnode[minimum width=\sidebartextwidth]{\CvPhoto{##1}{##2}}
-  }
-
-  \renewcommand{\cvgithub}[1]{%
-    \appendnode{\CvGithub{##1}}
-  }
-
-  \renewcommand{\cvphoneno}[1]{%
-    \appendnode{\CvPhoneNo{##1}}
-  }
-
-  \renewcommand{\cvemail}[1]{%
-    \appendnode{\CvEmail{##1}}
-  }
-
-  \renewcommand{\cvaddress}[1]{%
-    \appendnode{\CvAddress{##1}}
-  }
-
-  \renewcommand{\cvbday}[1]{%
-    \appendnode{\CvBday{##1}}
   }
 
   \begin{tikzpicture}[
