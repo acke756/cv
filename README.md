@@ -49,6 +49,9 @@ Specifies an e-mail address. Works with the hyperref package.
 `\cvaddress{<address>}`  
 Specifies an address.
 
+`\cvbday{<bday>}`  
+Specifies a birthday.
+
 ## Provided environments
 `\sidebar`  
 A `tikzpicture` environment that creates a sidebar on the left

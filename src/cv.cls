@@ -157,6 +157,12 @@
 \newcommand{\CvAddress}[1]{\CvAddressIcon #1}
 \newcommand{\cvaddress}[1]{\CvAddress{#1}}
 
+\newcommand{\CvBdayIcon}{%
+  \includegraphics[height=1em]{img/cake}
+}
+\newcommand{\CvBday}[1]{\CvBdayIcon #1}
+\newcommand{\cvbday}[1]{\CvBday{#1}}
+
 \newcounter{CurrentSidebarElemCounter}
 \newcounter{PreviousSidebarElemCounter}
 \newcommand*{\CurrentSidebarElem}{SidebarElem\theCurrentSidebarElemCounter}
@@ -237,6 +243,10 @@
 
   \renewcommand{\cvaddress}[1]{%
     \appendnode{\CvAddress{##1}}
+  }
+
+  \renewcommand{\cvbday}[1]{%
+    \appendnode{\CvBday{##1}}
   }
 
   \begin{tikzpicture}[
