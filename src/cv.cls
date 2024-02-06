@@ -21,7 +21,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 \setlength{\sidebarwidth}{\SidebarWidth}
-\setlength{\sidebarmargin}{0.025\sidebarwidth}
+\setlength{\sidebarmargin}{0.025\paperwidth}
 \setlength{\sidebartextwidth}{\dimexpr(\sidebarwidth - 2\sidebarmargin)\relax}
 \setlength{\sidebartextheight}{\dimexpr(\paperheight - 2\sidebarmargin)\relax}
 \setlength{\progressbarwidth}{0.5\sidebartextwidth}
